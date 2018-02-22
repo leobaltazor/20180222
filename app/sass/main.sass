@@ -1,0 +1,331 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "../fonts/fontawesome/css/fontawesome-all.min.css"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1
+	font-family: $default-font
+	overflow-x: hidden
+	input, textarea
+			border: #666 1px solid
+			outline: none
+			&:focus:required:invalid
+				border-color: red
+			&:required:valid
+				border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+=text-decor($size)
+	font-size: $size
+	color: #444444
+
+.about
+	.container
+		background-color:  #16a086
+		h2, h2 + p
+			color: #fff
+			margin: 0
+			padding: 0
+		h2
+			margin-top: 57px
+			margin-bottom: 18px
+
+.member
+	background-color: #fff
+	width: 220px
+	margin: 43px auto 74px
+	+text-decor(14px)
+	.name
+		display: block
+		font-size: 18px
+		margin: 20px 0 8px 0
+	.position
+		display: block
+		font-style: italic
+		margin: 0
+	.description
+		display: inline-block
+		margin: 21px 9px 19px
+		text-align: left
+		line-height: 20px
+	img
+		cursor: pointer
+.avatar
+	width: 220px
+	position: relative
+	.social
+		padding: 0
+		margin: 0
+		// display: none
+		// visibility: hidden
+		position: absolute
+		opacity: 0
+		list-style: none
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 220px
+		height: 228px
+		a
+			color: #fff
+			// display: block
+			padding: 6px 9px
+			font-size: 29px
+			// width: 45px
+			// height: 48px
+			text-decoration: none
+			background-color: rgba(22, 160, 134, 0.8)
+
+.member:hover~.social, .social:hover
+	// visibility: visible
+	opacity: 1
+	.fab:hover
+		color: red
+
+header
+	height: 90px
+	a
+		color: inherit
+		&:hover
+			text-decoration: none
+			color: inherit
+	.logo
+		margin-left: 50px
+		margin-top: 33px
+		position: relative
+		font-size: 20px
+		font-weight: bold
+
+		
+		&-top
+			margin-left: 50px
+			font-size: 14px	
+		
+		&:before
+			content: ''
+			width: 100px
+			position: absolute
+			left: -60px
+			top: -5px
+			height: 100px
+			background-size: cover
+			background: url('../img/b-logo.png') no-repeat
+	ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+		li
+			display: inline-block
+			position: relative
+			&:first-of-type
+				margin-left: 25px
+			a
+				line-height: 90px
+				color: #333333
+				padding: 15px 15px
+				transition: background-color 0.5s ease
+				&:hover
+					background-color: rgba($accent, .9)
+					color: #fff
+					text-decoration: none
+					
+.header-wrapper
+	height: 450px
+	object-fit: cover
+	background: #fff url(../img/jumbotron.jpg) 50% 50% no-repeat
+	h1, h1 + p
+		color: #fff
+		font-weight: 400
+		margin: 0
+		padding: 0
+		span
+			font-weight: bold
+	h1
+		font-size: 55px
+		margin: 80px auto 45px
+		+ p
+			font-size: 18px
+			margin-bottom: 50px
+
+.button
+	color: #fff
+	padding: 13px 20px
+	background-color: $accent
+	display: inline-block
+	margin-bottom: 43px
+	transition: background-color 0.5s ease
+	&:hover
+		background-color: lighten($accent, 10%)
+
+.arrow
+	font-size: 50px
+	color: #fff
+	width: 100%
+	display: inline-block
+	&:hover
+		color: $accent
+
+
+.portfolio
+	.container
+
+		h2, h2 + p
+			margin: 0
+			padding: 0
+		h2 + p
+			margin-bottom: 40px
+		h2
+			margin-top: 57px
+			margin-bottom: 18px
+		ul
+			list-style-type: none
+			li
+				text-transform: uppercase
+				display: inline-block
+				margin-left: 15px
+				&:first-of-type
+					margin-left: 0px
+				a
+					color: #fff
+					
+	&-button
+		padding: 10px 10px
+		// margin-left: 15px
+		background-color: $accent
+		display: block
+		margin-bottom: 43px
+		transition: background-color 0.5s ease
+		&:hover
+			background-color: lighten($accent, 10%)	
+			text-decoration: none
+			
+	.port
+		position: relative
+		cursor: pointer	
+		margin-bottom: 34px
+		.search
+			position: absolute
+			color: #fff
+			// width: 180px
+			// height: 180px
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			opacity: 0
+		&:before
+			content: ''
+			background-color: $accent
+			width: 180px
+			height: 180px
+			border-radius: 10em
+			position: absolute
+			opacity: 0
+			transition: opacity 0.5s ease
+		&:hover:before, .search:hover
+			opacity: 1
+.clear
+	cleaer: both
+.contact
+	.container
+		background-color: #ecf0f1
+
+		h2, h2 + p
+			margin: 0
+			padding: 0
+		h2 + p
+			margin-bottom: 50px
+		h2
+			margin-top: 52px
+			margin-bottom: 18px
+		p
+			font-size: 14px
+	&-info
+		p
+			width: 300px
+			line-height: 24px
+			position: relative
+			// margin-bottom: 20px
+		&-adr
+			padding-left: 16px
+			&:before
+				content: "\f3c5"
+				font-family: fontawesome
+				position: absolute
+				left: 0
+		&-phone
+			padding-left: 16px
+			&:before
+				content: "\f098"
+				font-family: fontawesome
+				position: absolute
+				left: 0
+		&-fax
+			padding-left: 16px
+			&:before
+				content: "\f02f"
+				font-family: fontawesome
+				position: absolute
+				left: 0
+		&-email
+			padding-left: 16px
+			&:before
+				content: "\f0e0"
+				font-family: fontawesome
+				position: absolute
+				left: 0
+	form
+		box-sizing: border-box
+		float: right
+		width: 100%
+		margin-bottom: 60px
+		font-size: 14px
+		input
+			box-sizing: border-box
+			font-style: italic
+			height: 47px
+			width: calc(50% - 15px)
+			margin-bottom: 22px
+			&[type=username]
+				margin-right: 26px
+		textarea
+			width: 100%
+			font-style: italic
+			height: 153px
+		>.button
+			float: right
+			margin: 23px 0 0 0
+			width: 114px
+			font-size: 13px
+			font-weight: 700
+			font-style: normal
+
+.footer
+	background-color:  #2d3e50
+	height: 87px
+	&-copy
+		color: #fff
+		margin-top: 25px
+
+
+@import "media" // Always at the end
